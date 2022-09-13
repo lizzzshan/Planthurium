@@ -1,6 +1,6 @@
 body{
     margin:0;
-    background: #009578;
+    background: #e2e5e0;
 }
 #container{
     display:grid;
@@ -19,6 +19,7 @@ body{
     resize: none;
     font-family: sans-serif;
     font-size: 16px;
+    color: rgb(44, 46, 40); /*Note text color*/
 }
 
 .add-note{
@@ -35,3 +36,4 @@ body{
 .add-note:hover{
     background: rgba(0, 0, 0, 0.2);
 }
+
