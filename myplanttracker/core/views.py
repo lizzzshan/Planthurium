@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
-
+from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout 
 from item.models import Category, Item
 
 from .forms import SignupForm
@@ -30,3 +32,8 @@ def signup(request):
     return render(request, 'core/signup.html', {
         'form': form
     })
+
+@login_required
+def logout_user(request):
+    logout(request)
+    return redirect('dashboard:index')
