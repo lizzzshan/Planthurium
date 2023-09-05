@@ -22,6 +22,7 @@
                 <a href="{% url 'item:new' %}" class="text-lg font-semibold hover:text-gray-500">New item</a>
                 <a href="#" class="px-6 py-3 text-lg font-semibold bg-green-400 text-white rounded-xl hover:bg-green-600">Inbox</a>
                 <a href="{% url 'dashboard:index' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Dashboard</a>
+                <a href="{% url 'core:logout' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Log out</a>
                 {% else %}
                 <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold bg-green-400 text-white rounded-xl hover:bg-green-600">Sign up</a>
                 <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold bg-gray-500 text-white rounded-xl hover:bg-gray-700">Log in</a>
