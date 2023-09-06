@@ -22,12 +22,10 @@
                     </li>
                 {% endfor %}
             </ul>
-
             <hr class="my-6">
             <p class="font-semibold">Clear filters</p>
-
             <ul>
-                <li> <a href="{% url 'item:items' %}" class="mt-2 py-4 px-8 inline-block bg-yellow-500 text-lg rounded-xl text-white">Clear</a>
+                <li> <a href="{% url 'item:items' %}" class="mt-2 py-4 px-8 inline-block uppercase font-semibold tracking-wider border-2 border-black bg-yellow-400 text-black">Clear</a>
                 </li>
             </ul>
         </div>
@@ -45,7 +43,7 @@
                                 <h2 class ="text-2xl">{{item.name}}</h2>
                                 <!-- TODO: parse price into correct format -->
                                 <p class="text-black">Added by: {{item.created_by}}</p>
-                                <p class="text-black">Price: {{item.price}}</p>
+                                <p class="text-black">Price: ${{item.price}}</p>
                                 <p class="text-black">Location: {{item.location}}</p>
                             </div>
                         </a>

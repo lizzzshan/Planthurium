@@ -18,7 +18,7 @@ class NewItemForm(forms.ModelForm):
                 'class': INPUT_CLASSES
             }),
             'price': forms.TextInput(attrs={
-                'class': INPUT_CLASSES
+                'class': INPUT_CLASSES,
             }),
             'location': forms.TextInput(attrs={
                 'class': INPUT_CLASSES

@@ -4,6 +4,7 @@ from django.db.models import Q
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Item, Category
 from .forms import NewItemForm, EditItemForm
+from django.core.exceptions import ValidationError
 
 def items(request):
     query = request.GET.get('query', '')
@@ -46,6 +47,7 @@ def new(request): # Require login
             return redirect('item:detail', pk=item.id)
     else:
         form = NewItemForm()
+
 
     return render(request, 'item/form.html',{
         'form':form,
