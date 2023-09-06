@@ -1,8 +1,8 @@
 # 🌿 Planthurium
-An anthuriums plant market where users can view my anthurium pollen, seedlings, and cuttings available for sale (I love anthuriums hehe)
+Planthuriums for anthurium enthusiasts and collectors! Explore our marketplace to buy, sell, or trade anthurium pollen and seedlings, connecting passionate growers worldwide!
 
 ## About the project
-There are a lot of online BST markets for houseplants, but not a lot for anthuriums. Anthurium pollen and seedlings are popular items to swap in the community. I saw that my plant community used Google Sheets as a database to collect info about anthurium pollen. 
+There are a lot of online BST markets for houseplants, but not a lot for anthuriums. Anthurium pollen and seedlings are popular items to swap in the community. I saw that my plant community used Google Sheets as a database to collect info about anthurium pollen and wanted to transform that into a fully functional website. 
 
 ### Features and todo's
 
