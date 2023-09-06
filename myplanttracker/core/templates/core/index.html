@@ -1,13 +1,12 @@
 {% extends 'core/base.html'%}
 
-{% block title %} Welcome | Planthurium {% endblock %}
+{% block title %} Home | Planthurium {% endblock %}
 
 {% block content %}
-
 <!-- Items section -->
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
-        <h2 class="mb-12 text-2xl text-center">Newest items</h2>
 
+<h2 class="mb-6 text-2xl text-center">Recently added</h2>
+    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
         <div class="grid grid-cols-4 gap-3">
             {%for item in items%}
             <div>
@@ -16,9 +15,12 @@
                         <img src="{{item.image.url}}" class="rounded-t-xl">
                     </div>
 
-                    <div class="p-6 bg-white rounded-b-xl">
+                    <div class="p-6 bg-white rounded-b-xl bg-white">
                         <h2 class ="text-2xl">{{item.name}}</h2>
-                        <p class="text-gray-500">Price: {{item.price}}</p>
+                        <!-- TODO: parse price into correct format -->
+                        <p class="text-black">Added by: {{item.created_by}}</p>
+                        <p class="text-black">Price: {{item.price}}</p>
+                        <p class="text-black">Location: {{item.location}}</p>
                     </div>
                 </a>
             </div>
@@ -26,19 +28,4 @@
         </div>
     </div>
 
-    <!-- Categories section -->
-    <div class="mt-6 px-6 py-12 bg-gray-100 rounded-xl">
-        <h2 class="mb-12 text-2xl text-center">Categories</h2>
-
-        <div class="grid grid-cols-2 gap-4">
-            {% for category in categories %}
-                <a href="#">
-                    <div class="p-6 bg-white rounded-b-xl">
-                        <h2 class ="text-2xl">{{category.name}}</h2>
-                        <p class="text-gray-500">{{category.items.count}}</p>
-                    </div>
-                </a>
-            {% endfor %}
-        </div>
-    </div>
 {% endblock %}
