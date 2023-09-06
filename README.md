@@ -10,8 +10,9 @@ There are a lot of online BST markets for houseplants, but not a lot for anthuri
 - [x] Post/delete/edit listings 
 - [x] Message other users 
 - [x] Listing search function
-- [ ] Listing availability feature (feature archived/sold listings)
-- [ ] Listing location display 
+- [x] Listing availability feature (feature archived/sold listings)
+- [x] Listing location display
+- [ ] Deploy website 
 
 ## Acknowledgements 
 * [Learn Django by building an online marketplace](https://www.youtube.com/watch?v=ZxMB6Njs3ck&t=6001s)
