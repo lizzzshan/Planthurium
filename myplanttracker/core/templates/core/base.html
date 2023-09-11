@@ -11,29 +11,53 @@
         <title>{% block title %} {% endblock %}</title>
     </head>
 
-    <body class="bg-lime-950">
-        <nav class="py-6 px-6 flex justify-between items-center border-b border-black bg-lime-900">
-            <!-- TODO: change this logo -->
-            <a href="/" class="text-xl font-semibold text-white">Planthurium</a>
-            
-            {% if request.user.is_authenticated %}
-            <p class="uppercase text-white ml-3">Welcome, {{request.user.username}}! </p>
-            {% endif %}
+    <body class="bg-white">
+        <!--TODO: implement responsive navbar -->
 
-            <div class="space-x-6">
-                <a href="{% url 'item:items' %}" class="text-lg font-semibold hover:text-white">Browse</a>
-
+        <nav class="bg-lime-700 border-gray-200 dark:bg-gray-900">
+            <div class="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl p-6">
+                <a href="/" class="flex items-center">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Planthurium</span>
+                </a>
                 {% if request.user.is_authenticated %}
-                <a href="{% url 'dashboard:index' %}" class="text-lg font-semibold hover:text-white">My items</a>
-                <a href="{% url 'item:new' %}" class="px-6 py-3 text-lg font-semibold tracking-wider border-2 border-black bg-lime-100 text-black  hover:bg-lime-300">New item</a>
-                <a href="{% url 'conversation:inbox' %}" class="px-6 py-3 text-lg font-semibold tracking-wider border-2 border-black bg-lime-200 text-black  hover:bg-lime-400">Inbox</a>
-                <a href="{% url 'core:logout' %}" class="px-6 py-3 text-lg font-semibold tracking-wider border-2 border-black bg-teal-600 text-black hover:bg-teal-700">Log out</a>
-                {% else %}
-                <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold tracking-wider border-2 border-black bg-lime-600 text-black  hover:bg-lime-800">Sign up</a>
-                <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold tracking-wider border-2 border-black bg-teal-600 text-black hover:bg-teal-700">Log in</a>
+                    <p class="uppercase text-white ml-3">Welcome, {{request.user.username}}! </p>
                 {% endif %}
+                <div class="flex items-center">
+                    <a href="{% url 'item:items' %}" class="px-6 py-3 text-lg font-semibold hover:text-white">Browse</a>
+
+                    {% if request.user.is_authenticated %}
+                    <a href="{% url 'item:new' %}" class="px-6 py-3 text-lg font-semibold hover:text-white">New item</a>
+                    <a href="{% url 'core:logout' %}" class="px-6 py-3 text-lg font-semibold tracking-wider border-1 border-black bg-teal-600 text-black hover:bg-teal-700">Log out</a>
+                    {% else %}
+                    <a href="{% url 'core:signup' %}" class="px-6 py-3 text-lg font-semibold tracking-wider border-1 border-black bg-lime-400 text-black  hover:bg-lime-500">Sign up</a>
+                    <a href="{% url 'core:login' %}" class="px-6 py-3 text-lg font-semibold tracking-wider border-1 border-black bg-teal-500 text-black hover:bg-teal-600">Log in</a>
+                    {% endif %}
+                </div>
             </div>
         </nav>
+        <nav class="bg-lime-50 dark:bg-gray-700">
+            <div class="max-w-screen-xl px-4 py-3 mx-auto">
+                <div class="flex items-center">
+                    <ul class="flex flex-row font-medium mt-0 mr-6 space-x-8 text-sm">
+                        <li>
+                            <a href="/" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Home</a>
+                        </li>
+                        {% if request.user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'dashboard:index' %}" class="text-gray-900 dark:text-white hover:underline">My items</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'item:new' %}" class="text-gray-900 dark:text-white hover:underline">New item</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'conversation:inbox' %}" class="text-gray-900 dark:text-white hover:underline">Inbox</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
         <div class="px-6 py-6">
             {% block content %}
 
